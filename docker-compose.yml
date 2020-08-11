@@ -1,0 +1,26 @@
+version: '3'
+services:
+  app1:
+    image: lbnr_app
+    command: -p 3001
+    ports:
+      - "3001:3001"
+    container_name: "app1"
+  app2:
+    image: lbnr_app
+    command: -p 3002
+    ports:
+      - "3002:3002"
+    container_name: "app2"
+  app3:
+    image: lbnr_app
+    command: -p 3003
+    ports:
+      - "3003:3003"
+    container_name: "app3"
+  web:
+    image: lbnr_web
+    build: ./nginx/
+    ports:
+      - 80:80
+    container_name: "web"
